@@ -29,15 +29,24 @@ npm run lint
 npm run format
 ```
 
-### Environment variables
+### Stripe configuration
 
-Stripe requires a public API key for the checkout flow. Set the variable before running the server:
+`payment.js` looks for the Stripe public key on `window.STRIPE_PUBLIC_KEY`.
+Define this variable before including the script. An easy way is to insert the key directly in your HTML:
+
+```html
+<script>window.STRIPE_PUBLIC_KEY = 'pk_test_your_key_here';</script>
+<script src="payment.js"></script>
+```
+
+To keep the key out of source control you can generate a config file at build time from an environment variable:
 
 ```bash
 export STRIPE_PUBLIC_KEY=pk_test_your_key_here
+echo "window.STRIPE_PUBLIC_KEY='${STRIPE_PUBLIC_KEY}'" > stripe-config.js
 ```
 
-Update `payment.js` to read this value or replace the placeholder key in the file.
+Include `stripe-config.js` before `payment.js` in `index.html`.
 
 ## Folder Structure
 

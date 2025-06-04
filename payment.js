@@ -10,13 +10,16 @@ let stripe;
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Stripe if the API key is available
-    const stripePublicKey = 'pk_test_placeholder'; // Replace with actual public key in production
-    
-    if (stripePublicKey) {
-        stripe = Stripe(stripePublicKey);
-        initPaymentForms();
+    // Initialize Stripe using a key defined on the page
+    const stripePublicKey = window.STRIPE_PUBLIC_KEY;
+
+    if (!stripePublicKey) {
+        console.error('Stripe public key missing. Set window.STRIPE_PUBLIC_KEY before loading payment.js');
+        return;
     }
+
+    stripe = Stripe(stripePublicKey);
+    initPaymentForms();
     
     // Initialize payment-related UI elements
     initPricingSelectors();
