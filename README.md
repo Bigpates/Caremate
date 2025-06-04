@@ -19,6 +19,15 @@ npm install
 npm run start
 ```
 
+### Linting and formatting
+
+Run ESLint and Prettier to check code style:
+
+```bash
+npm run lint
+npm run format
+```
+
 ### Environment variables
 
 Stripe requires a public API key for the checkout flow. Set the variable before running the server:
@@ -47,7 +56,12 @@ Caremate/
 └── logo.png
 ```
 
+
 All images, stylesheets and scripts live in the repository root. Reference them directly from `index.html`.
+
+## Deployment
+
+This project includes a GitHub Actions workflow that deploys the site to GitHub Pages. On every push to the `main` branch the workflow installs dependencies, runs linting and formatting checks, and publishes the current files.
 
 ## License
 

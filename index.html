@@ -342,7 +342,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Care Mate. All rights reserved.</p>
+                <p>&copy; <span id="footer-year"></span> Care Mate. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#" class="footer-bottom-link">Privacy Policy</a>
                     <a href="#" class="footer-bottom-link">Terms of Service</a>
@@ -633,5 +633,8 @@
     <script src="main.js"></script>
     <script src="chat.js"></script>
     <script src="payment.js"></script>
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
