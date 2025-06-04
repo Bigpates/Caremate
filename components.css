@@ -483,6 +483,33 @@
     box-shadow: 0 0 0 2px var(--accent-glow);
 }
 
+/* Onboarding */
+#onboarding-modal .modal-content {
+    max-width: 600px;
+}
+
+.onboarding-slide {
+    display: none;
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+.onboarding-slide.active {
+    display: block;
+}
+
+.onboarding-icon {
+    font-size: var(--font-size-5xl);
+    color: var(--accent-color);
+    margin-bottom: var(--space-md);
+}
+
+.onboarding-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-lg);
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar {
