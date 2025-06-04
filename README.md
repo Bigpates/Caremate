@@ -18,6 +18,7 @@ If you have Node installed you can alternatively run the development server defi
 npm install
 npm run start
 ```
+If a `package-lock.json` file exists, run `npm ci` instead of `npm install` to ensure a reproducible install.
 
 ### Linting and formatting
 
