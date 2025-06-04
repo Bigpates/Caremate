@@ -1,0 +1,288 @@
+/* Responsive Design */
+
+/* Base Mobile-First Approach */
+.container {
+  width: 100%;
+  padding: 0 var(--space-md);
+  margin: 0 auto;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+/* Flexbox Layouts */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Section Layouts */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.hero {
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-image {
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-bg);
+  z-index: var(--z-index-modal);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  transform: translateX(-100%);
+  transition: transform var(--transition-medium) var(--cubic-bezier);
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  transition: transform var(--transition-fast) var(--cubic-bezier);
+}
+
+.mobile-menu-close:hover {
+  transform: rotate(90deg);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin-bottom: var(--space-lg);
+}
+
+.mobile-nav-link {
+  margin-bottom: var(--space-md);
+}
+
+.mobile-nav-link a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast) ease;
+  display: block;
+  padding: var(--space-xs) 0;
+}
+
+.mobile-nav-link a:hover {
+  color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.mobile-nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-text {
+    text-align: left;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-text {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .hero-image {
+    flex: 1;
+    margin-top: 0;
+  }
+
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .nav-links,
+  .nav-buttons {
+    display: flex;
+  }
+}
+
+/* Large Desktop Breakpoint */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .navbar,
+  .footer,
+  .chat-widget,
+  .animated-bg {
+    display: none;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .card,
+  .feature-card {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+
+/* Dark Mode Media Query (for future light mode support) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Already using dark mode colors by default */
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animated-bg {
+    display: none;
+  }
+
+  .hero-title,
+  .hero-subtitle,
+  .hero-buttons,
+  .hero-image,
+  .section-title,
+  .section-subtitle,
+  .feature-card {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,637 +1,920 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Care Mate - Navigate NDIS with Confidence</title>
-    
+
     <!-- Meta tags for SEO and sharing -->
-    <meta name="description" content="Care Mate is an AI-powered assistant that helps NDIS participants navigate their plans, track goals, and receive personalized guidance.">
-    <meta name="keywords" content="NDIS, disability support, AI assistant, care coordination, NDIS plan management">
-    <meta property="og:title" content="Care Mate - Navigate NDIS with Confidence">
-    <meta property="og:description" content="AI-powered guidance for NDIS participants">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://caremate.ai">
-    <meta name="twitter:card" content="summary_large_image">
-    
+    <meta
+      name="description"
+      content="Care Mate is an AI-powered assistant that helps NDIS participants navigate their plans, track goals, and receive personalized guidance."
+    />
+    <meta
+      name="keywords"
+      content="NDIS, disability support, AI assistant, care coordination, NDIS plan management"
+    />
+    <meta
+      property="og:title"
+      content="Care Mate - Navigate NDIS with Confidence"
+    />
+    <meta
+      property="og:description"
+      content="AI-powered guidance for NDIS participants"
+    />
+    <meta property="og:image" content="assets/images/logo.png" />
+    <meta property="og:url" content="https://caremate.ai" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <!-- Favicon -->
-    <link rel="icon" href="logo.png">
-    
+    <link rel="icon" href="assets/images/favicon.ico" />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <!-- CSS -->
-    <link rel="stylesheet" href="variables.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="components.css">
-    <link rel="stylesheet" href="responsive.css">
-    
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
     <!-- Stripe JS -->
     <script src="https://js.stripe.com/v3/"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <!-- Animated Background -->
     <div class="animated-bg">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
     </div>
-    
+
     <!-- Navbar -->
     <nav class="navbar" aria-label="Main navigation">
-        <a href="#" class="logo">
-            <img src="logo.png" alt="Care Mate Logo" width="40" height="40">
-            Care Mate
-        </a>
-        
-        <ul class="nav-links">
-            <li><a href="#why-care-mate" class="nav-link">Why Care Mate</a></li>
-            <li><a href="#what-care-mate-does" class="nav-link">What We Do</a></li>
-            <li><a href="#who-we-help" class="nav-link">Who We Help</a></li>
-            <li><a href="#resources" class="nav-link">Resources</a></li>
-        </ul>
-        
-        <div class="nav-buttons">
-            <button class="btn btn-secondary login-btn" data-modal="auth-modal">
-                <i class="fas fa-user btn-icon"></i>
-                Log In
-            </button>
-            <button class="btn btn-primary signup-btn" data-modal="auth-modal">
-                <i class="fas fa-arrow-right btn-icon"></i>
-                Get Started
-            </button>
-        </div>
-        
-        <button class="mobile-menu-btn" aria-label="Open menu">
-            <i class="fas fa-bars"></i>
+      <a href="#" class="logo">
+        <img
+          src="assets/images/logo.png"
+          alt="Care Mate Logo"
+          width="40"
+          height="40"
+        />
+        Care Mate
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#why-care-mate" class="nav-link">Why Care Mate</a></li>
+        <li><a href="#what-care-mate-does" class="nav-link">What We Do</a></li>
+        <li><a href="#who-we-help" class="nav-link">Who We Help</a></li>
+        <li><a href="#resources" class="nav-link">Resources</a></li>
+      </ul>
+
+      <div class="nav-buttons">
+        <button class="btn btn-secondary login-btn" data-modal="auth-modal">
+          <i class="fas fa-user btn-icon"></i>
+          Log In
         </button>
+        <button class="btn btn-primary signup-btn" data-modal="auth-modal">
+          <i class="fas fa-arrow-right btn-icon"></i>
+          Get Started
+        </button>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
-    
+
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <div class="mobile-menu-header">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Care Mate Logo" width="40" height="40">
-                Care Mate
-            </a>
-            <button class="mobile-menu-close" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <ul class="mobile-nav-links">
-            <li class="mobile-nav-link"><a href="#why-care-mate">Why Care Mate</a></li>
-            <li class="mobile-nav-link"><a href="#what-care-mate-does">What We Do</a></li>
-            <li class="mobile-nav-link"><a href="#who-we-help">Who We Help</a></li>
-            <li class="mobile-nav-link"><a href="#resources">Resources</a></li>
-        </ul>
-        
-        <div class="mobile-nav-buttons">
-            <button class="btn btn-secondary btn-block login-btn" data-modal="auth-modal">
-                <i class="fas fa-user btn-icon"></i>
-                Log In
-            </button>
-            <button class="btn btn-primary btn-block signup-btn" data-modal="auth-modal">
-                <i class="fas fa-arrow-right btn-icon"></i>
-                Get Started
-            </button>
-        </div>
+      <div class="mobile-menu-header">
+        <a href="#" class="logo">
+          <img
+            src="assets/images/logo.png"
+            alt="Care Mate Logo"
+            width="40"
+            height="40"
+          />
+          Care Mate
+        </a>
+        <button class="mobile-menu-close" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <ul class="mobile-nav-links">
+        <li class="mobile-nav-link">
+          <a href="#why-care-mate">Why Care Mate</a>
+        </li>
+        <li class="mobile-nav-link">
+          <a href="#what-care-mate-does">What We Do</a>
+        </li>
+        <li class="mobile-nav-link"><a href="#who-we-help">Who We Help</a></li>
+        <li class="mobile-nav-link"><a href="#resources">Resources</a></li>
+      </ul>
+
+      <div class="mobile-nav-buttons">
+        <button
+          class="btn btn-secondary btn-block login-btn"
+          data-modal="auth-modal"
+        >
+          <i class="fas fa-user btn-icon"></i>
+          Log In
+        </button>
+        <button
+          class="btn btn-primary btn-block signup-btn"
+          data-modal="auth-modal"
+        >
+          <i class="fas fa-arrow-right btn-icon"></i>
+          Get Started
+        </button>
+      </div>
     </div>
-    
+
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">Navigate NDIS with <span>Confidence</span></h1>
-                        <p class="hero-subtitle">Care Mate is your AI-powered assistant that helps you understand your NDIS plan, track your goals, and get personalized guidance whenever you need it.</p>
-                        <div class="hero-buttons">
-                            <button class="btn btn-primary btn-lg" data-modal="chat-input-modal">
-                                <i class="fas fa-comment-dots btn-icon"></i>
-                                Try Care Mate Now
-                            </button>
-                            <button class="btn btn-secondary btn-lg" data-modal="role-pricing-modal">
-                                <i class="fas fa-info-circle btn-icon"></i>
-                                Learn More
-                            </button>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <img src="https://placehold.co/600x400/15151c/4eff91?text=Care+Mate+Dashboard" alt="Care Mate Dashboard Preview">
-                    </div>
-                </div>
-                
-                <div class="scroll-indicator">
-                    <div class="mouse"></div>
-                    <p>Scroll to learn more</p>
-                </div>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="hero-title">
+                Navigate NDIS with <span>Confidence</span>
+              </h1>
+              <p class="hero-subtitle">
+                Care Mate is your AI-powered assistant that helps you understand
+                your NDIS plan, track your goals, and get personalized guidance
+                whenever you need it.
+              </p>
+              <div class="hero-buttons">
+                <button
+                  class="btn btn-primary btn-lg"
+                  data-modal="chat-input-modal"
+                >
+                  <i class="fas fa-comment-dots btn-icon"></i>
+                  Try Care Mate Now
+                </button>
+                <button
+                  class="btn btn-secondary btn-lg"
+                  data-modal="role-pricing-modal"
+                >
+                  <i class="fas fa-info-circle btn-icon"></i>
+                  Learn More
+                </button>
+              </div>
             </div>
-        </section>
-        
-        <!-- Why Care Mate Section -->
-        <section class="section" id="why-care-mate">
-            <div class="container">
-                <h2 class="section-title">Why Care Mate?</h2>
-                <p class="section-subtitle">We're redefining what support can look like in the digital age — with humanity, empathy, and real power in the participant's hands.</p>
-                
-                <div class="features">
-                    <div class="feature-card">
-                        <i class="fas fa-brain feature-icon"></i>
-                        <h3 class="feature-title">AI-Powered Guidance</h3>
-                        <p class="feature-description">Get smart, personalized guidance based on your specific NDIS plan and goals, not generic information dumps.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <i class="fas fa-user-shield feature-icon"></i>
-                        <h3 class="feature-title">Participant-Led</h3>
-                        <p class="feature-description">You're in control. Care Mate is designed for participants first, with no hidden agendas or provider bias.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <i class="fas fa-clock feature-icon"></i>
-                        <h3 class="feature-title">24/7 Availability</h3>
-                        <p class="feature-description">Get support whenever you need it, day or night, without waiting for appointments or callbacks.</p>
-                    </div>
-                </div>
+            <div class="hero-image">
+              <img
+                src="https://placehold.co/600x400/15151c/4eff91?text=Care+Mate+Dashboard"
+                alt="Care Mate Dashboard Preview"
+              />
             </div>
-        </section>
-        
-        <!-- What Care Mate Does Section -->
-        <section class="section" id="what-care-mate-does">
-            <div class="container">
-                <h2 class="section-title">What Care Mate Does</h2>
-                <p class="section-subtitle">Care Mate helps you navigate every aspect of your NDIS journey with confidence and clarity.</p>
-                
-                <div class="grid grid-2">
-                    <div class="card">
-                        <i class="fas fa-file-alt feature-icon"></i>
-                        <h3 class="card-title">Understand Your Plan</h3>
-                        <p class="card-content">Care Mate explains your NDIS plan in plain language, helping you understand what's possible and how to make the most of your funding.</p>
-                    </div>
-                    
-                    <div class="card">
-                        <i class="fas fa-tasks feature-icon"></i>
-                        <h3 class="card-title">Track Your Goals</h3>
-                        <p class="card-content">Set and monitor progress toward your NDIS goals with visual tracking and regular check-ins to keep you on the right path.</p>
-                    </div>
-                    
-                    <div class="card">
-                        <i class="fas fa-search feature-icon"></i>
-                        <h3 class="card-title">Find Providers</h3>
-                        <p class="card-content">Discover and connect with quality service providers that match your needs, goals, and preferences.</p>
-                    </div>
-                    
-                    <div class="card">
-                        <i class="fas fa-file-signature feature-icon"></i>
-                        <h3 class="card-title">Create Documents</h3>
-                        <p class="card-content">Generate support letters, provider checklists, and other documents you need for your NDIS journey.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Who We Help Section -->
-        <section class="section" id="who-we-help">
-            <div class="container">
-                <h2 class="section-title">Who We Help</h2>
-                <p class="section-subtitle">Care Mate is designed for everyone in the NDIS ecosystem, with tailored support for different roles.</p>
-                
-                <div class="grid grid-3">
-                    <div class="card">
-                        <i class="fas fa-user feature-icon"></i>
-                        <h3 class="card-title">NDIS Participants</h3>
-                        <p class="card-content">Take control of your NDIS journey with personalized guidance, goal tracking, and provider recommendations.</p>
-                        <div class="card-footer">
-                            <button class="btn btn-primary select-role-btn" data-role="participant">Select Role</button>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <i class="fas fa-users feature-icon"></i>
-                        <h3 class="card-title">Support Coordinators</h3>
-                        <p class="card-content">Enhance your support with AI-powered tools that help you provide better service to more participants.</p>
-                        <div class="card-footer">
-                            <button class="btn btn-primary select-role-btn" data-role="coordinator">Select Role</button>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <i class="fas fa-calculator feature-icon"></i>
-                        <h3 class="card-title">Plan Managers</h3>
-                        <p class="card-content">Streamline your processes and provide better support to participants with financial guidance tools.</p>
-                        <div class="card-footer">
-                            <button class="btn btn-primary select-role-btn" data-role="manager">Select Role</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Resources Section -->
-        <section class="section" id="resources">
-            <div class="container">
-                <h2 class="section-title">Resources</h2>
-                <p class="section-subtitle">Access helpful guides, articles, and tools to navigate your NDIS journey with confidence.</p>
-                
-                <div class="grid grid-4">
-                    <div class="card">
-                        <i class="fas fa-book feature-icon"></i>
-                        <h3 class="card-title">NDIS Guides</h3>
-                        <p class="card-content">Comprehensive guides to help you understand every aspect of the NDIS.</p>
-                        <div class="card-footer">
-                            <button class="btn btn-secondary">View Guides</button>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <i class="fas fa-newspaper feature-icon"></i>
-                        <h3 class="card-title">Latest Updates</h3>
-                        <p class="card-content">Stay informed about the latest changes and news related to the NDIS.</p>
-                        <div class="card-footer">
-                            <button class="btn btn-secondary">Read Updates</button>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <i class="fas fa-calculator feature-icon"></i>
-                        <h3 class="card-title">Budget Tools</h3>
-                        <p class="card-content">Tools to help you plan and track your NDIS budget effectively.</p>
-                        <div class="card-footer">
-                            <button class="btn btn-secondary">Use Tools</button>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <i class="fas fa-question-circle feature-icon"></i>
-                        <h3 class="card-title">FAQs</h3>
-                        <p class="card-content">Answers to commonly asked questions about the NDIS and Care Mate.</p>
-                        <div class="card-footer">
-                            <button class="btn btn-secondary">View FAQs</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Chat Widget -->
-        <div class="chat-widget">
-            <button class="chat-widget-button" aria-label="Open chat" data-modal="chat-input-modal">
-                <i class="fas fa-comment-dots"></i>
-            </button>
+          </div>
+
+          <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <p>Scroll to learn more</p>
+          </div>
         </div>
+      </section>
+
+      <!-- Why Care Mate Section -->
+      <section class="section" id="why-care-mate">
+        <div class="container">
+          <h2 class="section-title">Why Care Mate?</h2>
+          <p class="section-subtitle">
+            We're redefining what support can look like in the digital age —
+            with humanity, empathy, and real power in the participant's hands.
+          </p>
+
+          <div class="features">
+            <div class="feature-card">
+              <i class="fas fa-brain feature-icon"></i>
+              <h3 class="feature-title">AI-Powered Guidance</h3>
+              <p class="feature-description">
+                Get smart, personalized guidance based on your specific NDIS
+                plan and goals, not generic information dumps.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <i class="fas fa-user-shield feature-icon"></i>
+              <h3 class="feature-title">Participant-Led</h3>
+              <p class="feature-description">
+                You're in control. Care Mate is designed for participants first,
+                with no hidden agendas or provider bias.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <i class="fas fa-clock feature-icon"></i>
+              <h3 class="feature-title">24/7 Availability</h3>
+              <p class="feature-description">
+                Get support whenever you need it, day or night, without waiting
+                for appointments or callbacks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What Care Mate Does Section -->
+      <section class="section" id="what-care-mate-does">
+        <div class="container">
+          <h2 class="section-title">What Care Mate Does</h2>
+          <p class="section-subtitle">
+            Care Mate helps you navigate every aspect of your NDIS journey with
+            confidence and clarity.
+          </p>
+
+          <div class="grid grid-2">
+            <div class="card">
+              <i class="fas fa-file-alt feature-icon"></i>
+              <h3 class="card-title">Understand Your Plan</h3>
+              <p class="card-content">
+                Care Mate explains your NDIS plan in plain language, helping you
+                understand what's possible and how to make the most of your
+                funding.
+              </p>
+            </div>
+
+            <div class="card">
+              <i class="fas fa-tasks feature-icon"></i>
+              <h3 class="card-title">Track Your Goals</h3>
+              <p class="card-content">
+                Set and monitor progress toward your NDIS goals with visual
+                tracking and regular check-ins to keep you on the right path.
+              </p>
+            </div>
+
+            <div class="card">
+              <i class="fas fa-search feature-icon"></i>
+              <h3 class="card-title">Find Providers</h3>
+              <p class="card-content">
+                Discover and connect with quality service providers that match
+                your needs, goals, and preferences.
+              </p>
+            </div>
+
+            <div class="card">
+              <i class="fas fa-file-signature feature-icon"></i>
+              <h3 class="card-title">Create Documents</h3>
+              <p class="card-content">
+                Generate support letters, provider checklists, and other
+                documents you need for your NDIS journey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Who We Help Section -->
+      <section class="section" id="who-we-help">
+        <div class="container">
+          <h2 class="section-title">Who We Help</h2>
+          <p class="section-subtitle">
+            Care Mate is designed for everyone in the NDIS ecosystem, with
+            tailored support for different roles.
+          </p>
+
+          <div class="grid grid-3">
+            <div class="card">
+              <i class="fas fa-user feature-icon"></i>
+              <h3 class="card-title">NDIS Participants</h3>
+              <p class="card-content">
+                Take control of your NDIS journey with personalized guidance,
+                goal tracking, and provider recommendations.
+              </p>
+              <div class="card-footer">
+                <button
+                  class="btn btn-primary select-role-btn"
+                  data-role="participant"
+                >
+                  Select Role
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fas fa-users feature-icon"></i>
+              <h3 class="card-title">Support Coordinators</h3>
+              <p class="card-content">
+                Enhance your support with AI-powered tools that help you provide
+                better service to more participants.
+              </p>
+              <div class="card-footer">
+                <button
+                  class="btn btn-primary select-role-btn"
+                  data-role="coordinator"
+                >
+                  Select Role
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fas fa-calculator feature-icon"></i>
+              <h3 class="card-title">Plan Managers</h3>
+              <p class="card-content">
+                Streamline your processes and provide better support to
+                participants with financial guidance tools.
+              </p>
+              <div class="card-footer">
+                <button
+                  class="btn btn-primary select-role-btn"
+                  data-role="manager"
+                >
+                  Select Role
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resources Section -->
+      <section class="section" id="resources">
+        <div class="container">
+          <h2 class="section-title">Resources</h2>
+          <p class="section-subtitle">
+            Access helpful guides, articles, and tools to navigate your NDIS
+            journey with confidence.
+          </p>
+
+          <div class="grid grid-4">
+            <div class="card">
+              <i class="fas fa-book feature-icon"></i>
+              <h3 class="card-title">NDIS Guides</h3>
+              <p class="card-content">
+                Comprehensive guides to help you understand every aspect of the
+                NDIS.
+              </p>
+              <div class="card-footer">
+                <button class="btn btn-secondary">View Guides</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fas fa-newspaper feature-icon"></i>
+              <h3 class="card-title">Latest Updates</h3>
+              <p class="card-content">
+                Stay informed about the latest changes and news related to the
+                NDIS.
+              </p>
+              <div class="card-footer">
+                <button class="btn btn-secondary">Read Updates</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fas fa-calculator feature-icon"></i>
+              <h3 class="card-title">Budget Tools</h3>
+              <p class="card-content">
+                Tools to help you plan and track your NDIS budget effectively.
+              </p>
+              <div class="card-footer">
+                <button class="btn btn-secondary">Use Tools</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fas fa-question-circle feature-icon"></i>
+              <h3 class="card-title">FAQs</h3>
+              <p class="card-content">
+                Answers to commonly asked questions about the NDIS and Care
+                Mate.
+              </p>
+              <div class="card-footer">
+                <button class="btn btn-secondary">View FAQs</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chat Widget -->
+      <div class="chat-widget">
+        <button
+          class="chat-widget-button"
+          aria-label="Open chat"
+          data-modal="chat-input-modal"
+        >
+          <i class="fas fa-comment-dots"></i>
+        </button>
+      </div>
     </main>
-    
+
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="#" class="footer-logo">
-                        <img src="logo.png" alt="Care Mate Logo" width="40" height="40">
-                        Care Mate
-                    </a>
-                    <p class="footer-description">Empowering NDIS participants with AI-powered guidance and support.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="footer-links-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#why-care-mate">Why Care Mate</a></li>
-                        <li class="footer-link"><a href="#what-care-mate-does">What We Do</a></li>
-                        <li class="footer-link"><a href="#who-we-help">Who We Help</a></li>
-                        <li class="footer-link"><a href="#resources">Resources</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="footer-links-title">Resources</h4>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#">Guides</a></li>
-                        <li class="footer-link"><a href="#">FAQs</a></li>
-                        <li class="footer-link"><a href="#">Blog</a></li>
-                        <li class="footer-link"><a href="#">About Us</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="footer-links-title">Legal</h4>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#">Privacy Policy</a></li>
-                        <li class="footer-link"><a href="#">Terms of Service</a></li>
-                        <li class="footer-link"><a href="#">Cookie Policy</a></li>
-                        <li class="footer-link"><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <a href="#" class="footer-logo">
+              <img
+                src="assets/images/logo.png"
+                alt="Care Mate Logo"
+                width="40"
+                height="40"
+              />
+              Care Mate
+            </a>
+            <p class="footer-description">
+              Empowering NDIS participants with AI-powered guidance and support.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Care Mate. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
-                    <a href="#" class="footer-bottom-link">Terms of Service</a>
-                    <a href="#" class="footer-bottom-link">Cookie Policy</a>
-                </div>
-            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-links-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li class="footer-link">
+                <a href="#why-care-mate">Why Care Mate</a>
+              </li>
+              <li class="footer-link">
+                <a href="#what-care-mate-does">What We Do</a>
+              </li>
+              <li class="footer-link">
+                <a href="#who-we-help">Who We Help</a>
+              </li>
+              <li class="footer-link"><a href="#resources">Resources</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-links-title">Resources</h4>
+            <ul class="footer-links">
+              <li class="footer-link"><a href="#">Guides</a></li>
+              <li class="footer-link"><a href="#">FAQs</a></li>
+              <li class="footer-link"><a href="#">Blog</a></li>
+              <li class="footer-link"><a href="#">About Us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-links-title">Legal</h4>
+            <ul class="footer-links">
+              <li class="footer-link"><a href="#">Privacy Policy</a></li>
+              <li class="footer-link"><a href="#">Terms of Service</a></li>
+              <li class="footer-link"><a href="#">Cookie Policy</a></li>
+              <li class="footer-link"><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Care Mate. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+            <a href="#" class="footer-bottom-link">Terms of Service</a>
+            <a href="#" class="footer-bottom-link">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
     </footer>
-    
+
     <!-- Chat Input Modal -->
     <div class="modal" id="chat-input-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Ask Care Mate</h3>
-                <p class="modal-subtitle">What would you like help with today?</p>
-            </div>
-            
-            <div class="modal-body">
-                <div class="chat-container">
-                    <div class="chat-header">
-                        <div class="chat-title">
-                            <i class="fas fa-robot logo-icon"></i>
-                            Care Mate Assistant
-                        </div>
-                        <button class="btn btn-text modal-close" aria-label="Close chat">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="chat-messages">
-                        <div class="message message-ai">
-                            Hello! I'm Care Mate, your NDIS assistant. How can I help you today?
-                        </div>
-                    </div>
-                    
-                    <div class="chat-input-wrapper">
-                        <textarea class="chat-input" placeholder="Type your message here..." rows="1"></textarea>
-                        <button class="btn btn-primary chat-send-button">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Ask Care Mate</h3>
+          <p class="modal-subtitle">What would you like help with today?</p>
         </div>
+
+        <div class="modal-body">
+          <div class="chat-container">
+            <div class="chat-header">
+              <div class="chat-title">
+                <i class="fas fa-robot logo-icon"></i>
+                Care Mate Assistant
+              </div>
+              <button class="btn btn-text modal-close" aria-label="Close chat">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+
+            <div class="chat-messages">
+              <div class="message message-ai">
+                Hello! I'm Care Mate, your NDIS assistant. How can I help you
+                today?
+              </div>
+            </div>
+
+            <div class="chat-input-wrapper">
+              <textarea
+                class="chat-input"
+                placeholder="Type your message here..."
+                rows="1"
+              ></textarea>
+              <button class="btn btn-primary chat-send-button">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
+
     <!-- Role Selection Modal with Pricing -->
     <div class="modal" id="role-pricing-modal">
-        <div class="modal-content" style="max-width: 900px;">
-            <div class="modal-header">
-                <h2 class="modal-title">Choose Your Plan</h2>
-                <p class="modal-subtitle">Select the plan that best fits your needs to continue your conversation with Care Mate.</p>
-            </div>
-            
-            <div class="modal-body">
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3 class="card-title">NDIS Participant / Carer</h3>
-                        <div class="package-price">$50<span>/month</span></div>
-                        <p class="card-content">Perfect for individuals navigating the NDIS system.</p>
-                        <ul class="package-features">
-                            <li class="package-feature"><i class="fas fa-check"></i> Unlimited basic questions</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Plan explanation</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Provider recommendations</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Budget tracking</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Email support</li>
-                        </ul>
-                        <div class="card-footer">
-                            <button class="btn btn-secondary select-package-btn" data-package="participant" data-price="50">Select Plan</button>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="popular-tag">Most Popular</div>
-                        <h3 class="card-title">Support Coordinator</h3>
-                        <div class="package-price">$100<span>/month</span></div>
-                        <p class="card-content">Comprehensive tools for support coordinators.</p>
-                        <ul class="package-features">
-                            <li class="package-feature"><i class="fas fa-check"></i> All Participant features</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Multi-client management</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Document generation</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Priority support</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Monthly progress reports</li>
-                        </ul>
-                        <div class="card-footer">
-                            <button class="btn btn-primary select-package-btn" data-package="coordinator" data-price="100">Select Plan</button>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h3 class="card-title">Plan Manager</h3>
-                        <div class="package-price">$80<span>/month</span></div>
-                        <p class="card-content">Specialized tools for plan managers.</p>
-                        <ul class="package-features">
-                            <li class="package-feature"><i class="fas fa-check"></i> All Participant features</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Financial tracking tools</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Advanced reporting</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> API integration</li>
-                            <li class="package-feature"><i class="fas fa-check"></i> Dedicated account manager</li>
-                        </ul>
-                        <div class="card-footer">
-                            <button class="btn btn-secondary select-package-btn" data-package="manager" data-price="80">Select Plan</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal-footer">
-                <button class="btn btn-secondary modal-close">Cancel</button>
-                <button class="btn btn-secondary" id="free-plan-btn">Try Free Plan</button>
-            </div>
+      <div class="modal-content" style="max-width: 900px">
+        <div class="modal-header">
+          <h2 class="modal-title">Choose Your Plan</h2>
+          <p class="modal-subtitle">
+            Select the plan that best fits your needs to continue your
+            conversation with Care Mate.
+          </p>
         </div>
+
+        <div class="modal-body">
+          <div class="grid grid-3">
+            <div class="card">
+              <h3 class="card-title">NDIS Participant / Carer</h3>
+              <div class="package-price">$50<span>/month</span></div>
+              <p class="card-content">
+                Perfect for individuals navigating the NDIS system.
+              </p>
+              <ul class="package-features">
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Unlimited basic questions
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Plan explanation
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Provider recommendations
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Budget tracking
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Email support
+                </li>
+              </ul>
+              <div class="card-footer">
+                <button
+                  class="btn btn-secondary select-package-btn"
+                  data-package="participant"
+                  data-price="50"
+                >
+                  Select Plan
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="popular-tag">Most Popular</div>
+              <h3 class="card-title">Support Coordinator</h3>
+              <div class="package-price">$100<span>/month</span></div>
+              <p class="card-content">
+                Comprehensive tools for support coordinators.
+              </p>
+              <ul class="package-features">
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> All Participant features
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Multi-client management
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Document generation
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Priority support
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Monthly progress reports
+                </li>
+              </ul>
+              <div class="card-footer">
+                <button
+                  class="btn btn-primary select-package-btn"
+                  data-package="coordinator"
+                  data-price="100"
+                >
+                  Select Plan
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Plan Manager</h3>
+              <div class="package-price">$80<span>/month</span></div>
+              <p class="card-content">Specialized tools for plan managers.</p>
+              <ul class="package-features">
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> All Participant features
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Financial tracking tools
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Advanced reporting
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> API integration
+                </li>
+                <li class="package-feature">
+                  <i class="fas fa-check"></i> Dedicated account manager
+                </li>
+              </ul>
+              <div class="card-footer">
+                <button
+                  class="btn btn-secondary select-package-btn"
+                  data-package="manager"
+                  data-price="80"
+                >
+                  Select Plan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-close">Cancel</button>
+          <button class="btn btn-secondary" id="free-plan-btn">
+            Try Free Plan
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Onboarding Modal -->
     <div class="modal" id="onboarding-modal">
-        <div class="modal-content">
-            <div class="onboarding-slide active" data-step="1">
-                <div class="onboarding-icon"><i class="fas fa-robot"></i></div>
-                <h3>Meet Care Mate</h3>
-                <p>Your personal AI assistant for navigating the NDIS.</p>
-            </div>
-            <div class="onboarding-slide" data-step="2">
-                <div class="onboarding-icon"><i class="fas fa-comments"></i></div>
-                <h3>Chat in Real Time</h3>
-                <p>Ask questions and get guidance whenever you need it.</p>
-            </div>
-            <div class="onboarding-slide" data-step="3">
-                <div class="onboarding-icon"><i class="fas fa-user-check"></i></div>
-                <h3>Stay on Track</h3>
-                <p>Track goals and manage your plan with ease.</p>
-            </div>
-            <div class="onboarding-controls">
-                <button class="btn btn-text onboarding-skip">Skip</button>
-                <button class="btn btn-primary onboarding-next">Next</button>
-            </div>
+      <div class="modal-content">
+        <div class="onboarding-slide active" data-step="1">
+          <div class="onboarding-icon"><i class="fas fa-robot"></i></div>
+          <h3>Meet Care Mate</h3>
+          <p>Your personal AI assistant for navigating the NDIS.</p>
         </div>
+        <div class="onboarding-slide" data-step="2">
+          <div class="onboarding-icon"><i class="fas fa-comments"></i></div>
+          <h3>Chat in Real Time</h3>
+          <p>Ask questions and get guidance whenever you need it.</p>
+        </div>
+        <div class="onboarding-slide" data-step="3">
+          <div class="onboarding-icon"><i class="fas fa-user-check"></i></div>
+          <h3>Stay on Track</h3>
+          <p>Track goals and manage your plan with ease.</p>
+        </div>
+        <div class="onboarding-controls">
+          <button class="btn btn-text onboarding-skip">Skip</button>
+          <button class="btn btn-primary onboarding-next">Next</button>
+        </div>
+      </div>
     </div>
 
     <!-- Authentication Modal -->
     <div class="modal" id="auth-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Welcome to Care Mate</h2>
-                <p class="modal-subtitle">Sign in to your account or create a new one</p>
-            </div>
-            
-            <div class="auth-tabs">
-                <div class="auth-tab active" id="signin-tab">Sign In</div>
-                <div class="auth-tab" id="signup-tab">Sign Up</div>
-            </div>
-            
-            <div class="modal-body">
-                <div class="auth-form" id="signin-form">
-                    <div class="form-group">
-                        <label for="signin-email" class="form-label">Email</label>
-                        <input type="email" id="signin-email" class="form-input" placeholder="Enter your email">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="signin-password" class="form-label">Password</label>
-                        <input type="password" id="signin-password" class="form-input" placeholder="Enter your password">
-                    </div>
-                    
-                    <div class="form-footer">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember-me">
-                            <label for="remember-me">Remember me</label>
-                        </div>
-                        <a href="#" class="forgot-password">Forgot password?</a>
-                    </div>
-                    
-                    <div class="auth-actions">
-                        <button class="btn btn-primary" id="signin-btn">Sign In</button>
-                    </div>
-                    
-                    <div class="auth-divider">or continue with</div>
-                    
-                    <div class="social-auth">
-                        <button class="social-auth-btn"><i class="fab fa-google"></i></button>
-                        <button class="social-auth-btn"><i class="fab fa-facebook-f"></i></button>
-                        <button class="social-auth-btn"><i class="fab fa-apple"></i></button>
-                    </div>
-                </div>
-                
-                <div class="auth-form" id="signup-form" style="display: none;">
-                    <div class="form-group">
-                        <label for="signup-name" class="form-label">Full Name</label>
-                        <input type="text" id="signup-name" class="form-input" placeholder="Enter your full name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="signup-email" class="form-label">Email</label>
-                        <input type="email" id="signup-email" class="form-input" placeholder="Enter your email">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="signup-password" class="form-label">Password</label>
-                        <input type="password" id="signup-password" class="form-input" placeholder="Create a password">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="signup-confirm-password" class="form-label">Confirm Password</label>
-                        <input type="password" id="signup-confirm-password" class="form-input" placeholder="Confirm your password">
-                    </div>
-                    
-                    <div class="auth-actions">
-                        <button class="btn btn-primary" id="signup-btn">Create Account</button>
-                    </div>
-                    
-                    <div class="auth-divider">or continue with</div>
-                    
-                    <div class="social-auth">
-                        <button class="social-auth-btn"><i class="fab fa-google"></i></button>
-                        <button class="social-auth-btn"><i class="fab fa-facebook-f"></i></button>
-                        <button class="social-auth-btn"><i class="fab fa-apple"></i></button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="auth-footer">
-                <p id="signin-footer">Don't have an account? <a href="#" id="to-signup">Sign up</a></p>
-                <p id="signup-footer" style="display: none;">Already have an account? <a href="#" id="to-signin">Sign in</a></p>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Welcome to Care Mate</h2>
+          <p class="modal-subtitle">
+            Sign in to your account or create a new one
+          </p>
         </div>
+
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="signin-tab">Sign In</div>
+          <div class="auth-tab" id="signup-tab">Sign Up</div>
+        </div>
+
+        <div class="modal-body">
+          <div class="auth-form" id="signin-form">
+            <div class="form-group">
+              <label for="signin-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="signin-email"
+                class="form-input"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="signin-password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="signin-password"
+                class="form-input"
+                placeholder="Enter your password"
+              />
+            </div>
+
+            <div class="form-footer">
+              <div class="remember-me">
+                <input type="checkbox" id="remember-me" />
+                <label for="remember-me">Remember me</label>
+              </div>
+              <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <div class="auth-actions">
+              <button class="btn btn-primary" id="signin-btn">Sign In</button>
+            </div>
+
+            <div class="auth-divider">or continue with</div>
+
+            <div class="social-auth">
+              <button class="social-auth-btn">
+                <i class="fab fa-google"></i>
+              </button>
+              <button class="social-auth-btn">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+              <button class="social-auth-btn">
+                <i class="fab fa-apple"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="auth-form" id="signup-form" style="display: none">
+            <div class="form-group">
+              <label for="signup-name" class="form-label">Full Name</label>
+              <input
+                type="text"
+                id="signup-name"
+                class="form-input"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="signup-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="signup-email"
+                class="form-input"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="signup-password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="signup-password"
+                class="form-input"
+                placeholder="Create a password"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="signup-confirm-password" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="signup-confirm-password"
+                class="form-input"
+                placeholder="Confirm your password"
+              />
+            </div>
+
+            <div class="auth-actions">
+              <button class="btn btn-primary" id="signup-btn">
+                Create Account
+              </button>
+            </div>
+
+            <div class="auth-divider">or continue with</div>
+
+            <div class="social-auth">
+              <button class="social-auth-btn">
+                <i class="fab fa-google"></i>
+              </button>
+              <button class="social-auth-btn">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+              <button class="social-auth-btn">
+                <i class="fab fa-apple"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-footer">
+          <p id="signin-footer">
+            Don't have an account? <a href="#" id="to-signup">Sign up</a>
+          </p>
+          <p id="signup-footer" style="display: none">
+            Already have an account? <a href="#" id="to-signin">Sign in</a>
+          </p>
+        </div>
+      </div>
     </div>
-    
+
     <!-- Checkout Modal -->
     <div class="modal" id="checkout-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Complete Your Purchase</h2>
-                <p class="modal-subtitle">You're just one step away from accessing Care Mate</p>
-            </div>
-            
-            <div class="modal-body">
-                <div class="checkout-summary">
-                    <div class="checkout-plan">
-                        <div id="checkout-plan-name">NDIS Participant / Carer Plan</div>
-                        <div id="checkout-plan-price">$50/month</div>
-                    </div>
-                    
-                    <div class="checkout-details">
-                        <div class="checkout-detail">
-                            <span>Subscription</span>
-                            <span>Monthly</span>
-                        </div>
-                        
-                        <div class="checkout-detail">
-                            <span>Tax</span>
-                            <span>Included</span>
-                        </div>
-                    </div>
-                    
-                    <div class="checkout-total">
-                        <span>Total</span>
-                        <span id="checkout-total-amount">$50</span>
-                    </div>
-                </div>
-                
-                <form id="payment-form" class="checkout-form">
-                    <div class="form-group">
-                        <label for="cardholder-name" class="form-label">Cardholder Name</label>
-                        <input type="text" id="cardholder-name" class="form-input" placeholder="Name on card" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="cardholder-email" class="form-label">Email</label>
-                        <input type="email" id="cardholder-email" class="form-input" placeholder="Email for receipt" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="card-element" class="form-label">Card Details</label>
-                        <div id="card-element" class="card-element"></div>
-                        <div id="card-errors" class="form-error"></div>
-                    </div>
-                    
-                    <div class="checkout-actions">
-                        <button type="button" class="btn btn-secondary" id="checkout-cancel">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Pay Now</button>
-                    </div>
-                </form>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Complete Your Purchase</h2>
+          <p class="modal-subtitle">
+            You're just one step away from accessing Care Mate
+          </p>
         </div>
+
+        <div class="modal-body">
+          <div class="checkout-summary">
+            <div class="checkout-plan">
+              <div id="checkout-plan-name">NDIS Participant / Carer Plan</div>
+              <div id="checkout-plan-price">$50/month</div>
+            </div>
+
+            <div class="checkout-details">
+              <div class="checkout-detail">
+                <span>Subscription</span>
+                <span>Monthly</span>
+              </div>
+
+              <div class="checkout-detail">
+                <span>Tax</span>
+                <span>Included</span>
+              </div>
+            </div>
+
+            <div class="checkout-total">
+              <span>Total</span>
+              <span id="checkout-total-amount">$50</span>
+            </div>
+          </div>
+
+          <form id="payment-form" class="checkout-form">
+            <div class="form-group">
+              <label for="cardholder-name" class="form-label"
+                >Cardholder Name</label
+              >
+              <input
+                type="text"
+                id="cardholder-name"
+                class="form-input"
+                placeholder="Name on card"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="cardholder-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="cardholder-email"
+                class="form-input"
+                placeholder="Email for receipt"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="card-element" class="form-label">Card Details</label>
+              <div id="card-element" class="card-element"></div>
+              <div id="card-errors" class="form-error"></div>
+            </div>
+
+            <div class="checkout-actions">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="checkout-cancel"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">Pay Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    
+
     <!-- JavaScript -->
-    <script src="main.js"></script>
-    <script src="chat.js"></script>
-    <script src="payment.js"></script>
-</body>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chat.js"></script>
+    <script src="assets/js/payment.js"></script>
+  </body>
 </html>
