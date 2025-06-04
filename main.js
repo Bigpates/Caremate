@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initModals();
     initMobileMenu();
-    
+    initOnboarding();
+
     // Add event listeners for interactive elements
     addEventListeners();
 });
@@ -291,10 +292,57 @@ function toggleTheme() {
 function setThemePreference() {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
     } else if (savedTheme === 'dark' || prefersDark) {
         document.body.classList.add('dark-mode');
+    }
+}
+
+/**
+ * Initialize onboarding experience
+ */
+function initOnboarding() {
+    const modal = document.getElementById('onboarding-modal');
+    if (!modal) return;
+
+    const slides = modal.querySelectorAll('.onboarding-slide');
+    const nextBtn = modal.querySelector('.onboarding-next');
+    const skipBtn = modal.querySelector('.onboarding-skip');
+
+    let step = 0;
+
+    function showStep(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+
+        if (index >= slides.length - 1) {
+            nextBtn.textContent = 'Finish';
+        } else {
+            nextBtn.textContent = 'Next';
+        }
+    }
+
+    function closeOnboarding() {
+        closeModal(modal);
+        localStorage.setItem('onboardingComplete', 'true');
+    }
+
+    nextBtn.addEventListener('click', () => {
+        step++;
+        if (step >= slides.length) {
+            closeOnboarding();
+        } else {
+            showStep(step);
+        }
+    });
+
+    skipBtn.addEventListener('click', closeOnboarding);
+
+    if (!localStorage.getItem('onboardingComplete')) {
+        openModal(modal);
+        showStep(step);
     }
 }
