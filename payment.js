@@ -117,7 +117,6 @@ function processPayment(paymentMethodId) {
     // In a real app, this would make an API call to your server
     // The server would create a subscription or charge with Stripe
     
-    console.log('Payment method ID:', paymentMethodId);
     
     // Simulate successful payment
     setTimeout(() => {
