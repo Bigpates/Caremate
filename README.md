@@ -38,9 +38,10 @@ Define this variable before including the script. An easy way is to insert the k
 <script src="payment.js"></script>
 ```
 
-To keep the key out of source control you can generate a config file at build time:
+To keep the key out of source control you can generate a config file at build time from an environment variable:
 
 ```bash
+export STRIPE_PUBLIC_KEY=pk_test_your_key_here
 echo "window.STRIPE_PUBLIC_KEY='${STRIPE_PUBLIC_KEY}'" > stripe-config.js
 ```
 
