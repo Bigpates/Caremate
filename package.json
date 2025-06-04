@@ -1,0 +1,26 @@
+{
+  "name": "caremate",
+  "version": "1.0.0",
+  "description": "Care Mate web application for NDIS participants",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --no-browser",
+    "lint": "eslint \"**/*.js\"",
+    "format": "prettier --write \"**/*.{js,css,html}\"",
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [
+    "ndis",
+    "care",
+    "assistant",
+    "web"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "live-server": "^1.2.2"
+  }
+}
