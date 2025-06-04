@@ -9,8 +9,12 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,7 +24,17 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run format
+      - uses: actions/configure-pages@v3
       - uses: actions/upload-pages-artifact@v1
         with:
           path: '.'
-      - uses: actions/deploy-pages@v1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v1
